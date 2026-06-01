@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/js/all.min.js"
+        integrity="sha512-6BTOlkauINO65nLhXhthZMtepgJSghyimIalb+crKRPhvhmsCdnIuGcVbR5/aQY2A+260iC1OPy1oCdB6pSSwQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>GROUP CHAT THAT'S ALL FUN & GAMES</title>
+    <style>
+        body{
+            margin: 0px;
+            padding: 0%;
+            width: 1510px;
+            background:
+                radial-gradient(
+                circle at center,
+                #4f46e5 0%,
+                #2b2f9c 25%,
+                #11155fff 45%,
+                #050714 75%,
+                #000000 100%
+            );
+        }
+        .head,ul,.dropdown-menu{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+        ul{
+            list-style: none;
+            
+        }
+        .c,.d,.e{
+            text-decoration: none;
+        }
+        .layoutname{
+            color: white;
+            font-weight: bolder;
+            font-size: 30px;
+            margin-left: 50px;
+            margin-top: 35px;
+        }
+        .layoutname,.b{
+            position: fixed;
+        }
+        .a{
+            margin-top: 45px;
+            margin-left: 280px;
+        }
+        .g{
+             margin-top: 46px;
+            margin-left: 8px;
+        }
+        .b .c{
+            color: black;
+            background-color: white;
+            font-weight: normal;
+        }
+        .b{
+            margin-top: 45px;
+            margin-left: 1380px;
+        }
+        .b .c:hover{
+            color: white;
+        }
+        .c{
+            color: white;
+            margin-left: 10px;
+            font-size: 20px;
+            font-weight: bolder;
+            padding-top: 12px;
+            padding-bottom: 12px;
+            padding-left: 12px;
+            padding-right: 12px;
+            border-radius: 15px;
+        }
+        .c:hover{
+            background-color: #5865F2;
+        }
+        .d{
+            color: white;
+            font-size: 20px;
+            font-weight: bolder;
+        }
+        .f{
+            margin-top: 18px;
+            margin-left: 0%;
+            width: 90px;
+            padding-right: 12px;
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: center;
+            border-radius: 15px;
+        } 
+        .section a {
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+            text-align: left;
+            font-weight: bold;
+        }
+        .section {
+            display: flex;
+            flex-direction: column;
+            justify-content: left;
+            gap: 5px;
+        }
+        .section .e:hover{
+            color:#434345;
+        }
+        .section h4 {
+            color:#0E0E3B;
+        }
+        .dropdown{
+            position: relative;
+        }
+        .dropdown-menu {
+            position: absolute;
+            left: 0px;
+            width: 280px;
+            padding-left: 50px;
+            background-color: #5865f2;
+            border-radius: 18px;
+            display: flex;
+            flex-direction: column;
+            opacity: 0;
+            transform: scaleY(0);
+            transition: .5s ease-in-out;
+            transform-origin: top;
+        }
+        .dropdown:hover .dropdown-menu {
+            opacity: 1;
+            transform: scaleY(1);
+        }
+        .d:hover {
+            background-color: #5865F2;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        .flex1{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            width: 1500px;
+        }
+        .i{
+            color: white;
+            font-size: 60px;
+            font-weight: bolder;
+            margin-left: 150px;
+            margin-top: 100px;
+        }
+        .j{
+            color:rgba(255, 255, 255, 0.906);
+            font-size: 22px;
+            margin-left: 150px;
+            margin-top: 30px;
+        }
+        .k{
+            width: 750px;
+            height: 550px;
+        }
+        .pic{
+            width: 730px;
+            margin-left: 50px;
+        }
+        .l{
+            color: black;
+            background-color: white;
+            padding-left: 22px;
+            padding-right: 22px;
+            padding-bottom: 20px;
+            padding-top: 20px;
+            font-size: 20px;
+            margin-left: 500px;
+            margin-top: 60px;
+            border-radius: 18px;
+            cursor: pointer;
+        }
+        .l:hover{
+            color: white;
+            background-color: #5865F2;
+        }
+        .m{
+            color: white;
+            background-color:#5865F2;
+            padding-left: 22px;
+            padding-right: 22px;
+            padding-bottom: 20px;
+            padding-top: 20px;
+            font-size: 20px;
+            border-radius: 18px;
+            margin-top: 60px;
+            margin-left: 40px;
+            cursor: pointer;
+        }
+        .m:hover{
+            color: black;
+        }
+        #crown{
+            width: 120px;
+            height: 120px;
+            margin-left: 570px;
+            margin-top: 95px;
+            animation: float 5s ease-in-out infinite;
+            position: absolute;
+        }
+        .crown{
+            position: relative;
+            transform: rotate(30deg);
+            opacity: 0.2;
+        }
+        .trophy{
+            opacity: 0.2;
+            position: absolute;
+            margin-left: 1200px;
+            transform: rotate(-30deg);
+        }
+        #trophy{
+            width: 120px;
+            height: 120px;
+            margin-top: 300px;
+            animation: float 5s ease-in-out infinite ;
+            position: absolute;
+        }
+        @keyframes float{
+            0%{
+                transform: translateY(0px);
+            }
+            50%{
+                transform: translateY(-15px);
+            }
+            100%{
+                transform: translateY(0px);
+            }
+        }
+        .main{
+            margin-top: 300px;
+        }
+        #ab{
+            width: 1230px;
+            height: 560px;
+            border-radius: 80px;
+            margin-left: 150px;
+            background-color: rgba(255, 255, 255, 0.136);
+        }
+        .video{
+            width: 700px;
+            height: 500px;
+            margin-top:30px;
+            margin-left: 35px;
+            border-radius: 60px;
+            background-color: rgba(81, 6, 6, 0.562);
+        }
+        .content{
+            margin-left: 50px;
+            margin-top: 120px;
+        }
+        .n{
+            color: white;
+            font-size: 50px;
+            font-weight: 900;
+            opacity: 1;
+        }
+        .o{
+            color: rgba(255, 255, 255, 0.956);
+            font-size: 20px;
+            margin-top: 10px;
+            opacity: 1;
+        }
+        #egg{
+            width: 250px;
+            height: 250px;
+            margin-left: -130px;
+            margin-top: -30px;
+            position:absolute;
+            animation: floating 5s ease-in-out infinite;
+        }
+        .egg{
+            position: relative;
+            transform: rotate(-120deg);
+            width: 50px;
+            height: 50px;
+            opacity: 0.3;
+        }
+        @keyframes floating{
+            0%{
+                transform: translateX(0px);
+            }
+            50%{
+                transform: translateX(-35px);
+            }
+            100%{
+                transform: translateX(0px);
+            }
+        }
+        .main1,.main2{
+            margin-top: 200px;
+        }
+        .main3,.main4{
+            margin-top: 250px;
+        }
+        #co{
+            margin-top: 120px;
+        }
+        #vi{
+            margin-left: 65px;
+            margin-top: 30px;
+        }
+        #vid{
+            margin-left: 120px;
+        }
+        #box{
+            width: 200px;
+            height: 250px;
+            position: absolute;
+            margin-left: 1170px;
+            margin-top: -120px;
+            transform: rotate(5deg);
+        }
+        #panda{
+            height: 300px;
+            width: 250px;
+            position: absolute;
+            margin-left: 1100px;
+            margin-top: -233px;
+        }
+        .panda{
+            position: relative;
+        }
+        #leaf{
+            width: 160px;
+            height: 100px;
+            position: absolute;
+            margin-left: 1138px;
+            margin-top: -230px;
+        }
+        .leaf{
+            width: 50px;
+            height: 50px;
+            animation: moving 5s ease-in-out infinite;
+            position: relative;
+        }
+        @keyframes moving{
+            0%,100%{
+                transform: rotate(0);
+            }
+            50%{
+                transform: rotateX(20deg);
+            }
+        }
+        #wheel{
+            width: 300px;
+            height: 350px;
+            position: absolute;
+            margin-left: 1220px;
+            margin-top: -250px;
+            animation: rotate 8s ease-in-out infinite;
+        }
+        .wheel{
+            width: 10px;
+            height: 10px;
+            opacity: 0.25;
+            transform: rotateX(30deg);
+            position: relative;
+        }
+        @keyframes rotate{
+            0%,100%{
+                transform: translateY(60px);
+                opacity: 0;
+            }
+            50%{
+                transform: translateY(-95px);
+                opacity: 2;
+            }
+        }
+        #girl{
+            width: 250px;
+            height: 250px;
+            position: absolute;
+            margin-left: 180px;
+            margin-top: -190px;
+        }
+        .girl{
+            position: relative;
+            width: 50px;
+        }
+        #women{
+            width: 250px;
+            height: 250px;
+            position: absolute;
+            margin-left: 838px;
+            margin-top: -182px;
+        }
+        #man{
+            width: 250px;
+            height: 250px;
+            position: absolute;
+            margin-left: 1070px; 
+            margin-top: -190px;  
+        }
+        .women,.man,.veg{
+            position: relative;
+            width: 50px;
+        }
+        #veg{
+            width: 380px;
+            height: 450px;
+            margin-left: 20px;
+            margin-top: -220px;
+            transform: rotate(10deg);
+        }
+        .veg{
+            width: 1px;
+            height: 1px;
+            position: relative;
+        }
+        #key{
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            margin-left: 1200px;
+            margin-top: -200px;
+        }
+        .key{
+            position: relative;
+            width: 1px;
+            height: 1px;
+        }
+        .main4{
+            color: white;
+            font-size: 70px;
+            font-weight: 900;
+            text-align: center;
+            margin-top: 200px;
+        }
+        .link{
+            width: 770px;
+            margin-left: 130px;
+        }
+        .l,.m{
+            margin-top: 180px;
+        }
+        #pic{
+            width: 1100px;
+            height: 720px;
+            margin-left: 150px;
+            margin-top: 80px;
+        }
+        .pic{
+            width: 0px;
+            height: 0px;
+        }
+        #leaf1{
+            width: 200px;
+            height: 120px;
+            position: absolute;
+            margin-left: 640px;
+            margin-top: 330px;
+        }
+        .leaf1{
+            animation: moving 5s ease-in-out infinite;
+            position: relative;
+            width: 0px;
+            height: 0px;
+        }
+        .main5{
+            background: radial-gradient(circle at top left, black, transparent 30%), radial-gradient(circle at bottom right, rgba(8, 35, 60, 0.872), transparent 30%), linear-gradient(to right, #09092d, #131367);            
+            margin-top: 674px;
+            height: 1050px;
+            width: 1517px;
+            display: flex;
+            flex-direction:row;
+            flex-wrap: wrap;
+        }
+        .box1{
+            width: 550px;
+        }
+        .box2{
+            width: 960px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+        #linked{
+            text-decoration: none;
+            margin-top: 15px;
+            color: white;
+            font-size: 17px;
+        }
+        #linked:hover{
+            color:#4f46e5;
+        }
+        .linked{
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            margin-top: 100px;
+            margin-left: 90px;
+        }
+        #tag{
+            font-size: 25px;
+            padding-right: 25px;
+            margin-top: 15px;
+        }
+        h4{
+            color: rgba(255, 255, 255, 0.682);
+            font-size: 17px;
+        }
+        .logo{
+            font-size: 50px;
+            padding-top: 100px;
+            padding-left: 50px;
+            color: white;
+        }
+        #social{
+            color:rgba(255, 255, 255, 0.682);
+            font-size: 20px;
+        }
+        .social,.language{
+            margin-left: 50px;
+            margin-top: 50px;
+        }
+        #soc{
+            width: 300px;
+            height: 50px;
+            border-radius: 15px;
+            background-color: rgba(255, 255, 255, 0.136);
+            margin-top: 20px;
+        }
+        .large{
+            font-size: 420px;
+            font-weight: 900;
+            margin-left:60px;
+            color: white;
+            height: 400px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="head">
+        <div class="layoutname"><i  class="fa-brands fa-discord"></i>Discord</div>
+        <div class="a">
+            <a href="" class="c">Download</a>
+            <a href="" class="c">Nitro</a>
+            <a href="" class="c">Discover</a>
+        </div>
+        <ul>
+            <li class="dropdown">
+                <div class="f"><a class="d" href="">Safety</a></div>
+                <div class="dropdown-menu flex">
+                    <div class="section">
+                        <h4>Resources</h4>
+                        <a class="e" href="">Family Center</a><br>
+                        <a class="e" href="">Safety Library</a><br>
+                        <a class="e" href="">Safety News</a><br>
+                        <a class="e" href="">Teen Charter</a><br>
+                        <a class="e" href="">Discord Player's Guide</a><br>
+                    </div>
+                    <div class="section">
+                        <h4>Hubs</h4>
+                        <a class="e" href="">Parent Hub</a><br>
+                        <a class="e" href="">Policy Hub</a><br>
+                        <a class="e" href="">Privacy Hub</a><br>
+                        <a class="e" href="">Transparency Hub</a><br>
+                        <a class="e" href="">Wellbeing Hub</a><br>
+                    </div>
+                <div>
+            </li>
+            <li class="dropdown">
+                <div class="f"><a class="d" href="">Quests</a></div>
+                <div class="section dropdown-menu">
+                    <h4>Resources</h4>
+                    <a class="e" href="">Advertising</a><br>
+                    <a class="e" href="">Success Stories</a><br>
+                    <a class="e" href="">Quests FAQ</a><br>
+                </div>
+            </li>
+            <li class="dropdown">
+                <div class="f"><a class="d" href="">Support</a></div>
+                <div class="section dropdown-menu">
+                    <h4>Resources</h4>
+                    <a class="e" href="">Help Center</a><br>
+                    <a class="e" href="">Feedback</a><br>
+                    <a class="e" href="">Sumbit a Request</a><br>
+                </div>
+            </li>
+            <li class="dropdown">
+                <div class="f"><a class="d" href="">Blog</a></div>
+                <div class="section dropdown-menu">
+                    <h4>Collection</h4>
+                    <a class="e" href="">Featured</a><br>
+                    <a class="e" href="">Community</a><br>
+                    <a class="e" href="">Discord HQ</a><br>
+                    <a class="e" href="">Engineering $ Developers</a><br>
+                    <a class="e" href="">How to Discord</a><br>
+                    <a class="e" href="">Policy $ Safety</a><br>
+                    <a class="e" href="">Product $ Features</a><br>
+                </div>
+            </li>
+            <li class="dropdown">
+                <div class="f"><a class="d" href="">Developers</a></div>
+                <div class="dropdown-menu">
+                    <div class="section">
+                        <h4>Learn</h4>
+                        <a class="e" href="">Discord For Game Developers</a><br>
+                        <a class="e" href="">Intregation</a><br>
+                        <a class="e" href="">Social Commerce</a><br>
+                        <a class="e" href="">Apps $ Activites</a><br>
+                        <a class="e" href="">Developer Newsletter</a><br>
+                        <a class="e" href="">Developer Case Studies</a><br>
+                    </div>
+                    <div class="section">
+                        <h4>Build</h4>
+                        <a class="e" href="">Official Game Communities</a><br>
+                        <a class="e" href="">Developer Portal</a><br>
+                        <a class="e" href="">Documentation</a><br>
+                        <a class="e" href="">Developer Help Center</a><br>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <div class="g"><a class="c" href="">Careers</a></div>
+        <div class="b"><a class="c" href="">Log In</a></div>
+    </nav>
+    <nav id="page1">
+        <div class="crown"><img id="crown" src="image/crown.png"></div>
+        <div class="flex1 ai">
+            <div class="h">
+                <div class="i">GROUP CHAT<br> THAT'S ALL<br> FUN & GAMES</div>
+                <div class="j">Discord is great for playing games and chilling with<br> friends, or even building a worldwide community.<br> Customise your own space to talk, play, and hang<br> out.</div>
+            </div>
+            <div class="pic"><img class="k" src="image/img22.png"></div>
+            <div class="trophy"><img id="trophy" src="image/trophy.png"></div>
+        </div>
+        <div class="flex1">
+            <div class="l"><i class="fa-solid fa-download"></i>Download  For  Windows</div>
+            <div class="m">Open Discord in your browser</div>
+        </div>
+        <div class="main">
+            <div class="leaf"><img id="leaf" src="image/leaf.png"></div>
+            <div class="panda"><img id="panda" src="image/img23.png"></div>
+            <div class="flex1" id="ab">
+                <div class="video"></div>
+                <div class="content">
+                    <div class="n">MAKE YOUR<br> GROUP CHATS<br> MORE FUN</div>
+                    <div class="o">Use custom emoji, stickers,<Br> soundboard effects and more to<br> add your personality to your voice,<br> video, or text chat. Set your avatar and<br> a custom status, and write your own <br>profile to show up in chat your way.</div>
+                </div>
+            </div>
+        </div>
+        <div class="egg"><img id="egg" src="image/egg1.png"></div>
+        <div class="main1">
+            <div class="flex1" id="ab">
+            <div class="content" id="co">
+                    <div class="n">STREAM LIKE <br>YOU'RE IN THE<br> SAME ROOM</div>
+                    <div class="o">High quality and low latency streaming<br> makes it feel like you're hanging out on<br> the couch with friends while playing a<br> game, watching shows, looking at<br> photos, or idk doing homework or<br> something.</div>
+                </div>
+                <div class="video" id="vi"></div>
+            </div> 
+        </div>
+        <div class="main2">
+            <div class="box"><img id="box" src="image/box.png"></div>
+            <div class="flex1" id="ab">
+                <div class="video"></div>
+                <div class="content">
+                    <div class="n">HOP IN WHEN <br>YOU'RE FREE,<br> NO NEED TO <br>CALL</div>
+                    <div class="o">Easily hop in and out of voice or text<br> chats without having to call or invite <br>anyone, so your party chat lasts before,<br> during, and after your game session.</div>
+                </div>
+            </div>
+        </div>
+        <div class="main3">
+            <div class="girl"><img id="girl" src="image/img26.png"></div>
+            <div class="wheel"><img id="wheel" src="image/wheel.png"></div>
+            <div class="flex1" id="ab">
+            <div class="content" id="co">
+                    <div class="n">SEE WHO'S<br> AROUND TO<br> CHILL</div>
+                    <div class="o">See who's around, playing games, or just<br> hanging out. For supported games, you <br>can see what modes or characters your <br>friends are playing and directly join up.</div>
+                </div>
+                <div class="video" id="vid"></div>
+            </div> 
+        </div>
+        <div class="main4">
+            <div class="women" class="man"><img id="women" src="image/women.png"><img id="man" src="image/img24.png"></div>
+            <div class="flex1" id="ab">
+                <div class="video"></div>
+                <div class="content">
+                    <div class="n">ALWAYS HAVE<br> SOMETHING TO<br> DO TOGETHER</div>
+                    <div class="o">Watch videos, play built-in games, listen <Br>to music, or just scroll together and<br> spam memes. Seamlessly text, call,<br> video chat, and play games, all in one<br> group chat.</div>
+                </div>
+            </div>
+            <div class="veg"><img id="veg" src="image/img27.png"></div>
+        </div>
+        <div class="main3">
+            <div class="flex1" id="ab">
+            <div class="content" id="co">
+                    <div class="n">WHEREVER<br> YOU GAME,<br> HANG OUT<br> HERE</div>
+                    <div class="o">On your PC, phone, or console, you can<br> still hang out on Discord. Easily switch<br> between devices and use tools to manage<br> multiple group chats <br>with friends.</div>
+                </div>
+                <div class="video" id="vid"></div>
+            </div> 
+        </div>
+        <div class="main4">YOU CAN'T SCROLL ANYMORE.<br>BETTER GO CHAT.</div>
+        <div class="link"><div class="l"><i class="fa-solid fa-download"></i>Download  For  Windows</div></div>
+        <div class="leaf1"><img id="leaf1" src="image/leaf.png"></div>
+        <div class="pic"><img id="pic" src="image/img28.png"></div>
+    </nav>
+    <div class="main5">
+        <div class="box1">
+            <div class="logo"><i  class="fa-brands fa-discord"></i></div>
+            <div class="social">
+                <label id="social">Social</label><br>
+                <a id="linked" href=""><i id="tag" class="fa-brands fa-x-twitter"></i></a>
+                <a id="linked" href=""><i id="tag" class="fa-brands fa-instagram"></i></a>
+                <a id="linked" href=""><i id="tag" class="fa-brands fa-facebook"></i></a>
+                <a id="linked" href=""><i id="tag" class="fa-brands fa-youtube"></i></a>
+                <a id="linked" href=""><i id="tag" class="fa-brands fa-tiktok"></i></a>
+            </div>
+        </div>
+        <div class="box2">
+            <div class="linked">
+                <h4>Product</h4>
+                <a id="linked" href="">Download</a>
+                <a id="linked" href="">Nitro</a>
+                <a id="linked" href="">Status</a>
+                <a id="linked" href="">App Directory</a>
+            </div>
+            <div class="linked">
+                <h4>Company</h4>
+                <a id="linked" href="">About</a>
+                <a id="linked" href="">Jobs</a>
+                <a id="linked" href="">Brand</a>
+                <a id="linked" href="">Newsroom</a>
+            </div>
+            <div class="linked">
+                <h4>Resources</h4>
+                <a id="linked" href="">Support</a>
+                <a id="linked" href="">Safety</a>
+                <a id="linked" href="">Blog</a>
+                <a id="linked" href="">Creators</a>
+                <a id="linked" href="">Community</a>
+                <a id="linked" href="">Developers</a>
+                <a id="linked" href="">Quests</a>
+                <a id="linked" href="">Official Third-Party Merch</a>
+                <a id="linked" href="">Feedback</a>
+            </div>
+            <div class="linked">
+                <h4>Policies</h4>
+                <a id="linked" href="">Terms</a>
+                <a id="linked" href="">Privacy</a>
+                <a id="linked" href="">Cookie Setting</a>
+                <a id="linked" href="">Guidelines</a>
+                <a id="linked" href="">Acknowledgements</a>
+                <a id="linked" href="">Licences</a>
+                <a id="linked" href="">Company Information</a>
+            </div>
+        </div>
+        <div class="large">Discord</div>
+    </div>
+</body>
+</html>

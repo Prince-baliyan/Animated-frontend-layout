@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color:rgb(1, 29, 29);
+            margin-left: 540px;
+            margin-top: 60px;
+        }
+        .calculater{
+            width: 430px;
+            height: 600px;
+            border-radius: 10px;
+            border: 1px solid grey;
+            box-shadow: -.25px -.25px 20px grey;
+            margin: 0%;
+            justify-content: center;
+            box-sizing: border-box;
+            text-align: center;
+        }   
+        input{
+            width: 330px;
+            height: 60px;
+            background:transparent;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            border: none;
+            text-align: right;
+            font-size: 50px;
+            color: white;
+        }
+        button{
+            width: 60px;
+            height: 60px;
+            border: none;
+            margin: 12px;
+            background-color: transparent;
+            color: white;
+            font-size: 30px;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: -.5px -.5px 3px grey ;
+        }
+        .b{
+            background-color: orange;
+        }
+        #c::placeholder{
+            color: white;
+        }
+        .c{
+            color: white;
+            font-size: 25px;
+            padding-top: 20px;
+        }
+        .d{
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculater">
+        <div class="c">Calculater</div>
+        <div class="input">
+            <input id="c" type="text" name="display" placeholder="0">
+        </div>
+        <div class="Buttonp">
+            <div class="a">
+                <button class="d">AC</button>
+                <button class="d">%</button>
+                <button class="d"><</button>
+                <button class="d">/</button>
+            </div>
+            <div class="a">
+                <button>7</button>
+                <button>8</button>
+                <button>9</button>
+                <button class="d">*</button>
+            </div>
+            <div class="a">
+                <button>4</button>
+                <button>5</button>
+                <button>6</button>
+                <button class="d">-</button>
+            </div>
+            <div class="a">
+                <button>1</button>
+                <button>2</button>
+                <button>3</button>
+                <button class="d">+</button>
+            </div>
+            <div class="a">
+                <button>00</button>
+                <button>0</button>
+                <button>.</button>
+                <button class="b">=</button>
+            </div>
+        </div>
+    </div>
+    <script>
+    let display = document.getElementById("c");
+    let buttons = document.querySelectorAll("button");
+
+    let expression = "";
+
+    let operators = ["+", "-", "*", "/", "%"];
+
+    buttons.forEach((button) => {
+        button.addEventListener("click", () => {
+
+            let value = button.innerText;
+
+            // AC Button
+            if (value === "AC") {
+                expression = "";
+                display.value = "";
+            }
+
+            // Backspace Button
+            else if (value === "<") {
+                expression = expression.slice(0, -1);
+                display.value = expression;
+            }
+
+            // Equal Button
+            else if (value === "=") {
+                try {
+                    expression = eval(expression).toString();
+                    display.value = expression;
+                } catch {
+                    display.value = "Error";
+                    expression = "";
+                }
+            }
+
+            // Operator Buttons
+            else if (operators.includes(value)) {
+
+                let lastChar = expression.slice(-1);
+
+                // Prevent multiple operators
+                if (operators.includes(lastChar)) {
+                    expression = expression.slice(0, -1) + value;
+                } else {
+                    expression += value;
+                }
+
+                display.value = expression;
+            }
+
+            // Number and Dot Buttons
+            else {
+                expression += value;
+                display.value = expression;
+            }
+
+        });
+    });
+</script>
+</body>
+</html>

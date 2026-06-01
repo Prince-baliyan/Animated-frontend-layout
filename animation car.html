@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moving Car </title>
+    <style>
+        body{
+            margin: 0%;
+            padding: 0%;
+        }
+        .sky{
+            height: 100vh;
+            width: 100%;
+            background-image: url(image/sky.png);
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            overflow-x: hidden;
+            z-index: 1;
+        }
+        .road{
+            height: 660px;
+            width: 800%;
+            display: block;
+            background-image: url(image/road.png);
+            position: absolute;
+            bottom: 0%;
+            left: 0%;
+            z-index: 1;
+            background-repeat: repeat-x;
+            animation: road 5s linear infinite;
+        }
+        .city{
+            height: 950px;
+            width: 500%;
+            display: block;
+            /* background-image: url(image/city.png); */
+            position: absolute;
+            left: 0%;
+            bottom: 0%;
+            z-index: 1;
+            background-repeat: repeat-x;
+            animation: city 12s linear infinite;
+        }
+        .car{
+            width: 400px;
+            transform: translateX(-50%);
+            position: absolute;
+            bottom: 50px;
+            left: 50%;
+            z-index: 2;
+        }
+        .car img{
+            width: 100%;
+            animation: car 1s linear infinite;
+        }
+        .wheel{
+            left: 50%;
+            bottom: 170px;
+            transform: translateX(-50%);
+            position: absolute;
+            z-index: 2;
+        }
+        .wheel img{
+            height: 72px;
+            width: 72px;
+            animation: wheel 1s linear infinite;
+        }
+        .back-wheel{
+            left: -183.5px;
+            position: absolute;
+        }
+        .front-wheel{
+            left: 86px;
+            position: absolute;
+        }
+        @keyframes wheel{
+            100%{
+                transform: rotate(360deg);
+            }   
+        }
+        @keyframes car{
+            100%{
+                transform: translateX(-1px);
+            }
+             50%{
+                transform: translateX(-1px);
+            }
+             0%{
+                transform: translateX(-1px);
+            }
+        }
+        @keyframes road{
+            100%{
+                transform: translateX(-1000px);
+            }
+        }
+        @keyframes city{
+            100%{
+                transform: translateX(-1440px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="sky">
+        <div class="wrapper">
+            <div class="car">
+                <img src="image/car.png" alt="">
+            </div>
+            <div class="wheel">
+                <img src="image/tyer.png" class="back-wheel">
+                <img src="image/tyer.png" class="front-wheel">
+            </div>
+        </div>
+        <div class="city"></div>
+        <div class="road"></div>
+    </div>
+</body>
+</html>
