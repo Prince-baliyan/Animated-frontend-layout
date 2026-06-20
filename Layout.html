@@ -10,8 +10,19 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&display=swap');
+        .scroll-animation {
+            opacity: 0;
+            transform: translateY(80px);
+            transition: all 1s ease;
+        }
+
+        .scroll-animation.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
     <title>Studio</title>
+    
     <style>
         body {
             margin: 0%;
@@ -503,28 +514,24 @@
         #hh {
             font-size: 25px;
             color: white;
-            /* margin-left: 120px; */
             margin-top: 20px;
         }
 
         #ii {
             font-size: 15px;
             color: rgb(177, 172, 172);
-            /* margin-left: 120px; */
             margin-top: 20px;
         }
 
         #jj {
             font-size: 15px;
             color: white;
-            /* margin-left: 120px; */
             margin-top: 20px;
         }
 
         #kk {
             color: rgb(177, 172, 172);
             font-size: 15px;
-            /* margin-left: 120px; */
             margin-top: 20px;
         }
 
@@ -560,345 +567,6 @@
             }
         }
 
-
-        /* ------------------------------------------------- animation----------------------------------
-
-        .a,
-        .b,
-        .c,
-        .d,
-        .e,
-        .j,
-        .k,
-        .l,
-        .o,
-        .p,
-        .q,
-        .t,
-        .u,
-        .v,
-        .w,
-        #e,
-        #f,
-        #g,
-        #i,
-        #l,
-        #m,
-        .aa,
-        .bb,
-        .cc,
-        .dd,
-        .ee,
-        .ff,
-        .gg,
-        .hh,
-        .ii,
-        #d,
-        .jj,
-        .kk,
-        #r,
-        #o,
-        #p,
-        #q,
-        #s,
-        #u,
-        #v,
-        #w,
-        .nn,
-        .oo,
-        .pp,
-        #photo,
-        .padd,
-        .uu,
-        .vv,
-        .ww,
-        .xx,
-        #aa,
-        #bb,
-        #cc,
-        .ss,
-        .tt,
-        #dd,
-        #ee,
-        #gg,
-        #hh,
-        #ii,
-        #jj,
-        #kk,#mm,#nn,#ss,#pp,#qq,#rr,#uu,#vv,#ww,#xx,#pictu,#que,#ans,#yy,.aaa,.bbb,.ccc,.fff,.ggg,.eee{
-            opacity: 0;
-            animation: fadeUp 1s ease forwards;
-        }
-
-        .b {
-            animation-delay: 0.3s;
-        }
-
-        .c {
-            animation-delay: 0.6s;
-        }
-
-        .d {
-            animation-delay: 0.9s;
-        }
-
-        .e {
-            animation-delay: 1.8s;
-        }
-
-        .j,
-        .aa {
-            animation-delay: 2.2s;
-        }
-
-        .k,
-        .bb {
-            animation-delay: 2.6s;
-        }
-
-        .l,
-        .cc {
-            animation-delay: 3.0s;
-        }
-
-        .o,
-        .dd {
-            animation-delay: 4.8s;
-        }
-
-        .p,
-        .ee {
-            animation-delay: 5.2s;
-        }
-
-        .q,
-        .ff {
-            animation-delay: 5.6s;
-        }
-
-        .t,
-        .gg {
-            animation-delay: 6.4s;
-        }
-
-        .u,
-        .hh {
-            animation-delay: 6.8s;
-        }
-
-        .v,
-        .ii {
-            animation-delay: 7.2s;
-        }
-
-        .w {
-            animation-delay: 8.8s;
-        }
-
-        #e,
-        #d {
-            animation-delay: 9.2s;
-        }
-
-        #f {
-            animation-delay: 9.6s;
-        }
-
-        #g {
-            animation-delay: 10s;
-        }
-
-        #i {
-            animation-delay: 10.6s;
-        }
-
-        #l {
-            animation-delay: 11.0s;
-        }
-
-        #m {
-            animation-delay: 11.0s;
-        }
-
-        .jj {
-            animation-delay: 11.4s;
-        }
-
-        .kk {
-            animation-delay: 11.8s;
-        }
-
-        #r {
-            animation-delay: 12.0s;
-        }
-
-        #o {
-            animation-delay: 12.4s;
-        }
-
-        #p {
-            animation-delay: 12.8s;
-        }
-
-        #q {
-            animation-delay: 13.2s;
-        }
-
-        #s {
-            animation-delay: 14.0s;
-        }
-
-        #u {
-            animation-delay: 14.2s;
-        }
-
-        #v {
-            animation-delay: 14.6s;
-        }
-
-        #w {
-            animation-delay: 15.0s;
-        }
-
-        .nn {
-            animation-delay: 15.4s;
-        }
-
-        .oo {
-            animation-delay: 15.8s;
-        }
-
-        .pp {
-            animation-delay: 16.2s;
-        }
-
-        #photo {
-            animation-delay: 15.4s;
-        }
-
-        .padd {
-            animation-delay: 16.4s;
-        }
-
-        .uu {
-            animation-delay: 16.8s;
-        }
-
-        .vv,
-        .ww {
-            animation-delay: 17.2s;
-        }
-
-        .xx {
-            animation-delay: 17.6s;
-        }
-
-        #aa {
-            animation-delay: 18.0s;
-        }
-
-        #bb {
-            animation-delay: 18.4s;
-        }
-
-        #cc {
-            animation-delay: 18.8s;
-        }
-
-        .ss {
-            animation-delay: 19.2s;
-        }
-
-        .tt {
-            animation-delay: 19.6s;
-        }
-
-        #dd {
-            animation-delay: 20.0s;
-        }
-
-        #ee {
-            animation-delay: 20.4s;
-        }
-
-        #gg {
-            animation-delay: 20.8s;
-        }
-
-        #hh {
-            animation-delay: 21.2s;
-        }
-
-        #ii {
-            animation-delay: 21.6s;
-        }
-
-        #jj {
-            animation-delay: 22.0s;
-        }
-
-        #kk {
-            animation-delay: 22.4s;
-        }
-        #mm{
-            animation-delay: 22.8s;
-        }
-        #nn{
-            animation-delay: 23.2s;
-        }
-        #ss{
-            animation-delay: 23.6s;
-        }
-        #pp{
-            animation-delay: 24.0s;
-        }
-        #qq{
-            animation-delay: 24.4s;
-        }
-        #rr{
-            animation-delay: 24.8s;
-        }
-        #uu{
-            animation-delay: 25.2s;
-        }
-        #vv{
-            animation-delay: 25.6s;
-        }
-        #ww{
-            animation-delay: 26.0s;
-        }
-        #xx{
-            animation-delay: 26.4s;
-        }
-        #pictu{
-            animation-delay: 26.8s;
-        }
-        #que{
-            animation-delay: 27.2s;
-        }
-        #ans{
-            animation-delay: 27.4s;
-        }
-        #yy{
-            animation-delay: 27.8s;
-        }
-        .aaa{
-            animation-delay: 28.2s;
-        }
-        .bbb{
-            animation-delay: 28.4s;
-        }
-        .ccc{
-            animation-delay: 28.8s;
-        }
-        .fff{
-            animation-delay: 29.2s;
-        }
-        .ggg{
-            animation-delay: 29.6s;
-        }
-        .eee{
-            animation-delay: 30.0s;
-        } */
         @keyframes fadeUp {
             from {
                 opacity: 0;
@@ -2127,7 +1795,7 @@
             #a {
                 text-decoration: none;
                 margin-top: 50px;
-                font-size: 40px;
+                font-size: 50px;
                 margin-right: 50px;
                 color: white;
             }
@@ -2137,20 +1805,17 @@
                 flex-wrap: wrap;
                 top: 0;
                 left: 0;
-                width: 350px;
+                width: 100%;
                 justify-content: flex-start;
-                align-items: baseline;
                 height: 700px;
                 position: absolute;
                 border-bottom-left-radius: 30px;
                 border-bottom-right-radius: 30px;
-                background-color:rgba(0, 0, 0, 0.729);
-                /* background-color:rgba(0, 0, 0, 0.96); */
+                background-color:rgba(0, 0, 0, 0.96);
                 color: rgb(255, 255, 255);
                 transition: all 0.5s;
                 margin-top: -1500vh;
-                margin-left: 1010px;
-                padding-left: 80px;
+                padding-left: 660px;
                 padding-top: 10px;
                 z-index: -1;
             }
@@ -2716,7 +2381,7 @@
         <div class="btn">&#9776</div>
         <div class="layoutname">Afterglow Studio</div>
         <div class="button">
-            <div class="close">&times;</div>
+            <div class="close"><i class="fa-solid fa-arrow-rotate-right"></i></div>
             <a id="a" href="#page2">Projects</a>
             <a id="a" href="#page3">About</a>
             <a id="a" href="#page5">Process</a>
@@ -3122,12 +2787,29 @@
     <script>
 
         document.getElementsByClassName('btn')[0].addEventListener('click',function(){
-            document.getElementsByClassName('button')[0].style.marginTop='23vh'
-        })
+            document.getElementsByClassName('button')[0].style.marginTop='18vh'
+        });
         document.getElementsByClassName('close')[0].addEventListener('click',function(){
             document.getElementsByClassName('button')[0].style.marginTop='-100vh'
-        })
+        });
 
+        document.addEventListener("DOMContentLoaded", () => {
+            const elements = document.querySelectorAll(
+                "#photo,.a,.b,.c,.d,.e,.f,.g,.j,.k,.l,.o,.p,.q,.t,.u,.v,.w,.x,.y,img,.jj,.kk,.nn,.oo,.pp,.uu,.vv,.xx,.yy,.ss,.tt,#dd,#ee,#ii,#jj,#kk,#hh,#oo,#ww,#xx,#que,#ans,#yy,.eee,#tt,#mm,#nn,.aaa,.bbb,.ccc,.fff,.ggg,#e,#f,#g,#i,#l,#m,#o,#p,#q,#u,#v,#w,#b,.padd,#aa,#bb,#cc"
+            );
+
+            elements.forEach(el => el.classList.add("scroll-animation"));
+
+            const observer = new IntersectionObserver((entries)=>{
+                entries.forEach(entry=>{
+                    if(entry.isIntersecting){
+                        entry.target.classList.add("show");
+                    }
+                });
+            },{threshold:0.15});
+
+            document.querySelectorAll(".scroll-animation").forEach(el=>observer.observe(el));
+        });
     </script>
 
 
